@@ -6,7 +6,7 @@ import breakfast4 from "../../../images/breakfast/breakfast4.png";
 import breakfast5 from "../../../images/breakfast/breakfast5.png";
 import breakfast6 from "../../../images/breakfast/breakfast6.png";
 import BreakFastExport from "../BreakFastExport/BreakFastExport";
-import './BreakFast.css'
+import "./BreakFast.css";
 const BreakFast = () => {
   const breakFast = [
     {
@@ -53,7 +53,7 @@ const BreakFast = () => {
     },
   ];
   return (
-    <div className="breakfast mt-4">
+    <div className="mt-4 row container">
       {breakFast.map((breakfast) => (
         <BreakFastExport
           key={breakfast.id}

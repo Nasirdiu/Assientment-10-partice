@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
-import "./BreakFastExport.css";
-const BreakFastExport = ({ breakfast }) => {
-  const { name, img, describe, price } = breakfast;
+import { Card } from "react-bootstrap";
+
+const Lunchs = ({ lunch }) => {
+  const { name, img, describe, price } = lunch;
   return (
     <div className="g-5 col-sm-12 col-md-6 col-lg-4">
       <div className="text-center breakfast-containner ">
@@ -17,4 +17,4 @@ const BreakFastExport = ({ breakfast }) => {
   );
 };
 
-export default BreakFastExport;
+export default Lunchs;
