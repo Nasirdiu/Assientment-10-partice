@@ -1,0 +1,9 @@
+.btn-button{
+border-radius: 10px;
+margin-left: 20px;
+padding: 10px;
+
+}
+.btn-button:hover{
+background-color: red;
+}

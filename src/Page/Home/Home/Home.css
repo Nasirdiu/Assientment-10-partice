@@ -1,0 +1,10 @@
+.middle a{
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+    border-radius: 15px;
+}
+.middle a:hover{
+    background-color: red;
+}
