@@ -1,49 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Login.css";
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+ 
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleFrom = (event) => {
+    event.preventDefault();
+  };
   return (
-    <div class="card-color mx-auto col-md-3 w-50 mt-5 ">
-      <h2 class="text-center p-3 head-color">Login Account</h2>
-      <form class="w-75 mx-auto p-3">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter Your Email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Enter Your Password"
-          />
-        </div>
-        <div class="mb-3 form-check">
-          <label class="form-check-label" for="exampleCheck1">
-            Forget Password
-          </label>
-        </div>
+    <div className="login-container">
+      <div className="login-title">LOGIN</div>
+      <form className="login-form" onSubmit={handleFrom}>
+        <input type="text" placeholder="Your Email" onChange={handleEmail} />
+
+        <input
+          type="password"
+          placeholder="password"
+          onChange={handlePassword}
+        />
+
+        <button>Login</button>
+
+        {/* {error && <p className="error-message">{error}</p> } */}
+        {/* {hookError && <p className="error-message">{hookError?.message}</p>} */}
+
+        <p>
+          Don't have an account? <Link to="/singup">Sign up first</Link>{" "}
+        </p>
       </form>
-      <div class="row text-center pb-4 mx-auto gap-3">
-        <div class="col-md-5">
-          <button
-            type="submit"
-            class="login-btn rounded-3 w-75 d-block ms-auto "
-          >
-            Login
-          </button>
-        </div>
-      </div>
     </div>
   );
 };
