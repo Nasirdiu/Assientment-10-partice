@@ -9,7 +9,7 @@ const Home = () => {
       <div className="text-center middle mt-3">
       <Link to="/breakfast">BreakFast</Link>
       <Link to="/lunch">Lunch</Link>
-      <Link to="dinner">Dinner</Link>
+      <Link to="/dinner">Dinner</Link>
       </div>
     </div>
   );
