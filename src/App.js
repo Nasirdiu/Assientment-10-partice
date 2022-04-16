@@ -9,12 +9,20 @@ import BreakFast from "./Page/Home/BreakFast/BreakFast";
 import Lunch from "./Page/Home/Lunch/Lunch";
 import Dinner from "./Page/Home/Dinner/Dinner";
 import NotFound from "./Page/Share/NotFound/NotFound";
+import RequireAuth from "./Page/Login/RequireAuth/RequireAuth";
 function App() {
   return (
     <div>
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home></Home>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/singup" element={<SingUp></SingUp>}></Route>
         <Route path="/breakfast" element={<BreakFast></BreakFast>}></Route>

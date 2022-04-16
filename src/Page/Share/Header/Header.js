@@ -6,7 +6,11 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 import logo from "../../../images/logo2.png";
 import "./Header.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 const Header = () => {
+  const [user]=useAuthState(auth)
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
@@ -20,9 +24,14 @@ const Header = () => {
             <Nav.Link>
               <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
             </Nav.Link>
-            <Nav.Link className="btn-button" as={Link} to="/login">
+            {
+              user ? (
+                <button onClick={() => signOut(auth)}>Logout</button>
+            ) :
+              <Nav.Link className="btn-button" as={Link} to="/login">
               Login
-            </Nav.Link>
+            </Nav.Link>}
+            <li>{user?.email}</li>
             <Nav.Link
               className="btn-button"
               eventKey={2}
